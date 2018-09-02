@@ -40,3 +40,10 @@ docker-compose ps
 ``
 docker-compose exec django bash
 ``
+
+# Troubleshoot
+## I can't connect to http://127.0.0.1:8000/
+Check the actual IP to be used with:
+``
+docker-machine ip default
+``
