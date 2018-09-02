@@ -12,3 +12,31 @@ Testing Django app with social signup features
 - Create django app: django-admin startproject social
 - Do django db migration: python manage migrate
 - Run djang to test it works: python manage runserver
+- Create Dockerfile and docker-compose-yml
+- Create docker image: docker-compose build
+- Run docker container: docker-compose up
+
+## Create docker image
+``
+docker-compose build
+``
+
+## Start docker image
+``
+docker-compose up
+``
+
+## Start docker in background
+``
+docker-composer up -d
+``
+
+## Show running instances
+``
+docker-compose ps
+``
+
+## Start shell in running docker
+``
+docker-compose exec django bash
+``
