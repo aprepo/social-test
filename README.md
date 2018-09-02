@@ -47,3 +47,19 @@ Check the actual IP to be used with:
 ``
 docker-machine ip default
 ``
+
+This happens when running the docker on VirtualBOX, for example when running on mac, on Linux this probably is not a problem.
+The Docker is exposing the port to the VirtualBOX host, not on the actual machine, so you need to connect to the IP of the virtualbox. If you want to use localhost instead (so you don't have to care if the IP of the VirtualBOX changes), you can forward the local port to the VirtualBOX port easily by configuring it on the VirtualBOX itself: 
+- Open the settings of the "default" machine on VirtualBOX (assuming this is the name of the machine you are using)
+- Open "Network"
+- On "Adapter 1", open "Advanced"
+- Open "Port forwarding"
+- Add following:
+  -  Name: django
+  - Protocol: TCP
+  - Host IP: 127.0.0.1
+  - Host port: 8000
+  - Guest IP: <leave empty>
+  - Guest port: 8000
+  
+Now you can connect to localhost:8000 and it will go to port 8000 on the vm and via taht to the django on the docker image. Note: this will reserve the port 8000 when the VirtualBOX is running, so if you want to run the app on local, you need to shut down the VirtualBOX (or change the port).
