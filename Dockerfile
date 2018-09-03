@@ -24,5 +24,4 @@ RUN pipenv install --system
 # Server
 EXPOSE 8000
 STOPSIGNAL SIGINT
-ENTRYPOINT ["python", "manage.py"]
-CMD ["runserver", "0.0.0.0:8000"]
+CMD ["gunicorn"  , "-b", "0.0.0.0:8000", "social.wsgi"]
