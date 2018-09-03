@@ -18,6 +18,8 @@ Testing Django app with social signup features
 - Install gunicorn: ``pipenv install gunicorn``
 - Run django with gunicorn: ``gunicorn social.wsgi``
 - Install aws cli tools: ``pipenv install awscli``
+- Run aws configuration: ``aws configure``
+  - See: https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html
 
 ## Create docker image
 ``
