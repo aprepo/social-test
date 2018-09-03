@@ -15,6 +15,8 @@ Testing Django app with social signup features
 - Create Dockerfile and docker-compose-yml
 - Create docker image: docker-compose build
 - Run docker container: docker-compose up
+- Install gunicorn: pipenv install gunicorn
+- Run django with gunicorn: gunicorn social.wsgi
 
 ## Create docker image
 ``
